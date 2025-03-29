@@ -103,6 +103,8 @@ f1_metric = F1Score(task="multiclass", num_classes=8).to(DEVICE)
 
 best_val_acc = 0.0
 best_model_path = "model/best_model.pth"
+if not os.path.exists("model"):
+    os.makedirs("model")
 
 # Train model
 for epoch in range(EPOCHS):
